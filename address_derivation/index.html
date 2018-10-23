@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Address derivation - Subzero</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="../extra_css.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Address derivation";
+    var mkdocs_page_input_path = "address_derivation.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Subzero</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Learn</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../physical_components/">Physical components</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../software_components/">Software components</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../supply_chain_security/">Supply chain security</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Initialization</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../hsm_initialization/">HSM initialization</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../wallet_initialization/">Wallet initialization</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Transactions</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../sample_transaction/">Sample transaction</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Address derivation</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#address-derivation">Address derivation</a></li>
+    
+
+    <li class="toctree-l3"><a href="#multisig-segwit">Multisig + segwit</a></li>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../signing_ceremony/">Signing ceremony</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../merging_signatures/">Merging signatures</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../audit/">Audit</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../bug_bounty/">Bug Bounty</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../contributors/">Contributors</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../contributing/">Contributing</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../license/">License</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Subzero</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Transactions &raquo;</li>
+        
+      
+    
+    <li>Address derivation</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="address-derivation">Address derivation</h1>
+<p>After each location has finalized their wallet, the Coordinate service is able to use all the xpub to derive
+addresses.</p>
+<p>The following derivation scheme is used inside the HSM:</p>
+<pre><code class="no-highlight">m / coin_type' / account / change / address_index
+</code></pre>
+
+<p>The Coordinator service thus computes the <code>account / change / address_index</code> derivation.</p>
+<h1 id="multisig-segwit">Multisig + segwit</h1>
+<p>A multisig script is then computed. For example, with the sample transaction:</p>
+<pre><code class="no-highlight">echo '5221022dc4f3706655e8c11685bfe1978e930bcbba1d83269f385c5242b00905a3253c2102359b50d66f4439fc135e558e4f09631aa8d1688553449cf794bf12f88d0877962102fd5283f39419f559dbc16a5ea6a721f22de21d224bc665b64c59102dfcc5253021036dd870c3272a0d1f1f33ee382ad9f3d7b370021e16b78528220907db41aa7d2454ae' | bx script-decode
+2 [022dc4f3706655e8c11685bfe1978e930bcbba1d83269f385c5242b00905a3253c] [02359b50d66f4439fc135e558e4f09631aa8d1688553449cf794bf12f88d087796] [02fd5283f39419f559dbc16a5ea6a721f22de21d224bc665b64c59102dfcc52530] [036dd870c3272a0d1f1f33ee382ad9f3d7b370021e16b78528220907db41aa7d24] 4 checkmultisig
+</code></pre>
+
+<p>This script is wrapped in a pay-to-script-hash (P2SH), with the resulting address <code>a914fa...</code>:</p>
+<pre><code class="no-highlight">echo '5221022dc4f3706655e8c11685bfe1978e930bcbba1d83269f385c5242b00905a3253c2102359b50d66f4439fc135e558e4f09631aa8d1688553449cf794bf12f88d0877962102fd5283f39419f559dbc16a5ea6a721f22de21d224bc665b64c59102dfcc5253021036dd870c3272a0d1f1f33ee382ad9f3d7b370021e16b78528220907db41aa7d2454ae' | bx sha256
+5211be1c60bb65d02a0fbc2b0d9ce77c83f680a1414248ca7a36232e2292ea4a
+echo '00205211be1c60bb65d02a0fbc2b0d9ce77c83f680a1414248ca7a36232e2292ea4a' | bx bitcoin160  
+faf4d7354aae5846569530283b31875e8439a2f1
+echo 'hash160 [faf4d7354aae5846569530283b31875e8439a2f1] equal' | bx script-encode
+a914faf4d7354aae5846569530283b31875e8439a2f187
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../signing_ceremony/" class="btn btn-neutral float-right" title="Signing ceremony">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../sample_transaction/" class="btn btn-neutral" title="Sample transaction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>© 2018 Square, Inc.</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../sample_transaction/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../signing_ceremony/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

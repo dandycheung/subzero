@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Sample transaction - Subzero</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="../extra_css.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Sample transaction";
+    var mkdocs_page_input_path = "sample_transaction.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Subzero</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Learn</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../physical_components/">Physical components</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../software_components/">Software components</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../supply_chain_security/">Supply chain security</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Initialization</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../hsm_initialization/">HSM initialization</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../wallet_initialization/">Wallet initialization</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Transactions</span>
+    <ul class="subnav">
+                <li class=" current">
+                    
+    <a class="current" href="./">Sample transaction</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#2-of-4-multisig-segwit">2-of-4 multisig + segwit</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#sending-funds-to-a-cold-wallet">Sending funds to a cold wallet</a></li>
+        
+            <li><a class="toctree-l4" href="#retrieving-funds-from-the-cold-wallet">Retrieving funds from the cold wallet</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../address_derivation/">Address derivation</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../signing_ceremony/">Signing ceremony</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../merging_signatures/">Merging signatures</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../audit/">Audit</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../bug_bounty/">Bug Bounty</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../contributors/">Contributors</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../contributing/">Contributing</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../license/">License</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Subzero</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Transactions &raquo;</li>
+        
+      
+    
+    <li>Sample transaction</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="2-of-4-multisig-segwit">2-of-4 multisig + segwit</h1>
+<p>The following two transactions use a 2-of-4 wallet. The first transaction funds the cold wallet and the second
+transaction moves funds out.</p>
+<p>What is not shown here are the QR codes which carried the transaction metadata and signatures. We also skip over how
+the cold wallet is initialized for now.</p>
+<h2 id="sending-funds-to-a-cold-wallet">Sending funds to a cold wallet</h2>
+<p>The <a href="https://live.blockcypher.com/btc-testnet/tx/27efc462460cfafd3223f801e7dd1363c52df74a4b65465124f9a6c7eb45e07b/">following transaction</a> was broadcasted on Testnet. The cold wallet address is a pay-to-script-hash type address (<code>2NG8AE4w9bcaAAVzFF9dyPrqdtFt4rpCgqp</code>)</p>
+<pre><code>020000000151348dd145dda8e34b108ab000eb15c4f54d074c3117d7d2a43538f7a6ebf899000000006a47304402200
+a7560d27bb4e78682626878e9541cf1e77061d25be999384be98069d259af7102207baef2bfe7befcd06af9efa0acf0
+1e0a3d4d1c91e779b67b02303ccb58eccd120121025fa31a70ea8d8270a0e42cde93ae58e6f3160e0ab9470774b98b3
+496cbc3e432feffffff0291ae1018000000001976a914300163c3ab4c2207be60f67402791fbc83f37c3f88ac80a4bf
+070000000017a914faf4d7354aae5846569530283b31875e8439a2f1873c1d1500
+</code></pre>
+<p>Which decodes to:</p>
+<pre><code>02000000 // version
+01 // n_inputs
+ 51348dd145dda8e34b108ab000eb15c4f54d074c3117d7d2a43538f7a6ebf899 // prev_hash
+ 00000000 // index
+ 6a 47304402200a7560d27bb4e78682626878e9541cf1e77061d25be999384be98069d259af7102207baef2bfe7befcd06af9efa0acf01e0a3d4d1c91e779b67b02303ccb58eccd120121025fa31a70ea8d8270a0e42cde93ae58e6f3160e0ab9470774b98b3496cbc3e432 // script
+ feffffff // sequence
+
+02 // n_outputs
+ 91ae101800000000 // amount
+ 19 76a914300163c3ab4c2207be60f67402791fbc83f37c3f88ac // script
+
+ 80a4bf0700000000 // amount
+ 17 a914faf4d7354aae5846569530283b31875e8439a2f187 // script
+
+3c1d1500 // timelock
+</code></pre>
+<h2 id="retrieving-funds-from-the-cold-wallet">Retrieving funds from the cold wallet</h2>
+<p>The signing ceremony produced two sets of signatures:</p>
+<pre><code>1. 304402200902963690c2161c47a2a050552d8d0653a25cd5760288395f2cb36be2ef77ed02200ddc11839052972d
+88da9c6044dc486b692d2fad2f2c11175f414d1733f9014901
+2. 3044022009d472294cf982690bb791e6a5fc0e209b2d12d524cc8cfc65c86a564aa64df3022031c6888c8a88e7db
+c0885ee43850452dec77b0a206321dafcd8484ed2680471201
+</code></pre>
+
+<p>The signatures were then combined and <a href="https://live.blockcypher.com/btc-testnet/tx/c6b69d678c2f5389297301fb8a5290891891ca22465f9e16b8886e9488f0f567/">broadcasted</a>:</p>
+<pre><code>010000000001017be045ebc7a6f9245146654b4af72dc56313dde701f82332fdfa0c4662c4ef270100000023220
+0205211be1c60bb65d02a0fbc2b0d9ce77c83f680a1414248ca7a36232e2292ea4afeffffff02c0209002000000
+017a91416872e5bd0e766876696531e68a87605fd082c4987804120050000000017a9142e820d410e36fb6ab1b2
+72eb62a37282b95e2f2087040047304402200902963690c2161c47a2a050552d8d0653a25cd5760288395f2cb36
+be2ef77ed02200ddc11839052972d88da9c6044dc486b692d2fad2f2c11175f414d1733f9014901473044022009
+d472294cf982690bb791e6a5fc0e209b2d12d524cc8cfc65c86a564aa64df3022031c6888c8a88e7dbc0885ee43
+850452dec77b0a206321dafcd8484ed26804712018b5221022dc4f3706655e8c11685bfe1978e930bcbba1d8326
+9f385c5242b00905a3253c2102359b50d66f4439fc135e558e4f09631aa8d1688553449cf794bf12f88d0877962
+102fd5283f39419f559dbc16a5ea6a721f22de21d224bc665b64c59102dfcc5253021036dd870c3272a0d1f1f33
+ee382ad9f3d7b370021e16b78528220907db41aa7d2454ae00000000
+</code></pre>
+<p>Which decodes to:</p>
+<pre><code>01000000 // version
+00 // segwit marker
+01 // segwit flag
+01 // n_inputs
+ 7be045ebc7a6f9245146654b4af72dc56313dde701f82332fdfa0c4662c4ef27 // prev_hash
+ 01000000 // index
+ 23 2200205211be1c60bb65d02a0fbc2b0d9ce77c83f680a1414248ca7a36232e2292ea4a // script
+ feffffff // sequence
+
+02 // n_outputs
+ c020900200000000 // amount
+ 17 a91416872e5bd0e766876696531e68a87605fd082c4987 // script
+
+ 8041200500000000 // amount
+ 17 a9142e820d410e36fb6ab1b272eb62a37282b95e2f2087 // script
+
+04 // witness
+ 00  // witness
+ 47 304402200902963690c2161c47a2a050552d8d0653a25cd5760288395f2cb36be2ef77ed02200ddc11839052972d88da9c6044dc486b692d2fad2f2c11175f414d1733f9014901 // witness
+ 47 3044022009d472294cf982690bb791e6a5fc0e209b2d12d524cc8cfc65c86a564aa64df3022031c6888c8a88e7dbc0885ee43850452dec77b0a206321dafcd8484ed2680471201 // witness
+ 8b 5221022dc4f3706655e8c11685bfe1978e930bcbba1d83269f385c5242b00905a3253c2102359b50d66f4439fc135e558e4f09631aa8d1688553449cf794bf12f88d0877962102fd5283f39419f559dbc16a5ea6a721f22de21d224bc665b64c59102dfcc5253021036dd870c3272a0d1f1f33ee382ad9f3d7b370021e16b78528220907db41aa7d2454ae // witness
+00000000 // timelock
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../address_derivation/" class="btn btn-neutral float-right" title="Address derivation">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../wallet_initialization/" class="btn btn-neutral" title="Wallet initialization"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>© 2018 Square, Inc.</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../wallet_initialization/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../address_derivation/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

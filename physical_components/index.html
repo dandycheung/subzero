@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Physical components - Subzero</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="../extra_css.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Physical components";
+    var mkdocs_page_input_path = "physical_components.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Subzero</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Learn</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Physical components</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#physical-components">Physical components</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#choosing-secure-locations">Choosing secure locations</a></li>
+        
+            <li><a class="toctree-l3" href="#hardware-security-module-hsm">Hardware Security Module (HSM)</a></li>
+        
+            <li><a class="toctree-l3" href="#dvd-reader">DVD reader</a></li>
+        
+            <li><a class="toctree-l3" href="#qr-code-scanner">QR-code scanner</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#linux-server">Linux server</a></li>
+    
+
+    <li class="toctree-l2"><a href="#monitor">Monitor</a></li>
+    
+
+    <li class="toctree-l2"><a href="#keyboard">Keyboard</a></li>
+    
+
+    <li class="toctree-l2"><a href="#battery">Battery</a></li>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../software_components/">Software components</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../supply_chain_security/">Supply chain security</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Initialization</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../hsm_initialization/">HSM initialization</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../wallet_initialization/">Wallet initialization</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Transactions</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../sample_transaction/">Sample transaction</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../address_derivation/">Address derivation</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../signing_ceremony/">Signing ceremony</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../merging_signatures/">Merging signatures</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../audit/">Audit</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../bug_bounty/">Bug Bounty</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../contributors/">Contributors</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../contributing/">Contributing</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../license/">License</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Subzero</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Physical components</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="physical-components">Physical components</h1>
+<p>Sensitive key material is only ever available in clear text inside the HSM. As a result, the other physical components
+aren't sensitive. We do however practice defense in depth.</p>
+<h2 id="choosing-secure-locations">Choosing secure locations</h2>
+<p>You should consult with a physical security specialist for best practices. Using dedicated
+rooms (or buildings), renting space in commercial data centers, or renting bank vaults all provide various tradeoffs.</p>
+<p>We recommend picking physical locations which are unlikely to be simultaneously affected by a disaster.</p>
+<h2 id="hardware-security-module-hsm">Hardware Security Module (HSM)</h2>
+<p>We leverage "Thales nCipher Solo XC low" HSMs. We picked this HSM for the following reasons:</p>
+<ul>
+<li>FIPS certified.</li>
+<li>Ability to run custom, signed code.</li>
+</ul>
+<p>Our HSM's form factor is PCIe, but a network-attached setup might also be feasible.</p>
+<p>A smart card reader (supplied with the HSM) and smart cards are required for various administrative, as well as
+operational, tasks.</p>
+<p>Running custom software on this HSM requires a CodeSafe license. The ECC license is not required.</p>
+<h2 id="dvd-reader">DVD reader</h2>
+<p>The code which runs on the servers is distributed using DVDs. We picked DVDs for the following reasons:</p>
+<ul>
+<li>Immutable (mostly).</li>
+<li>Easy path for upgrading multiple remote locations.</li>
+</ul>
+<h2 id="qr-code-scanner">QR-code scanner</h2>
+<p>Each remote location has two QR-code scanners. The QR-code scanner emulates a keyboard, which removes the need to
+deal with custom hardware drivers. One QR-code scanner is connected to the offline server, the other scanner is used
+to upload the signatures.</p>
+<h1 id="linux-server">Linux server</h1>
+<p>We use standard Linux servers. Our servers need one PCIe slot (for the HSM), a DVD drive bay, a keyboard,
+an additional USB port (for the QR-code scanner) and a monitor. A hard drive is needed to store the wallet in
+its encrypted form.</p>
+<h1 id="monitor">Monitor</h1>
+<p>Standard monitor which plugs into the server. The monitor is used to display confirmation messages. The monitor's
+sensitivity ranges from medium to high, depending on what business logic rules are enforced within the HSM.</p>
+<h1 id="keyboard">Keyboard</h1>
+<p>Standard keyboard which plugs into the server. The keyboard is used to confirm actions displayed by the UI. The keyboard
+is also used to enter the operator smart card password.</p>
+<h1 id="battery">Battery</h1>
+<p>Powering the Linux server off a battery while a signing ceremony is taking place provides power isolation.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../software_components/" class="btn btn-neutral float-right" title="Software components">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href=".." class="btn btn-neutral" title="Learn"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>© 2018 Square, Inc.</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../software_components/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

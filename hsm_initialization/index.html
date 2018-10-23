@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>HSM initialization - Subzero</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="../extra_css.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "HSM initialization";
+    var mkdocs_page_input_path = "hsm_initialization.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Subzero</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Learn</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../physical_components/">Physical components</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../software_components/">Software components</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../supply_chain_security/">Supply chain security</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Initialization</span>
+    <ul class="subnav">
+                <li class=" current">
+                    
+    <a class="current" href="./">HSM initialization</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#hsm-initialization">HSM initialization</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#main-world">Main World</a></li>
+        
+            <li><a class="toctree-l4" href="#signing-world">Signing World</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../wallet_initialization/">Wallet initialization</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Transactions</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../sample_transaction/">Sample transaction</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../address_derivation/">Address derivation</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../signing_ceremony/">Signing ceremony</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../merging_signatures/">Merging signatures</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../audit/">Audit</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../bug_bounty/">Bug Bounty</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../contributors/">Contributors</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../contributing/">Contributing</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../license/">License</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Subzero</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Initialization &raquo;</li>
+        
+      
+    
+    <li>HSM initialization</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="hsm-initialization">HSM initialization</h1>
+<p>Before any operation can take place, all the HSMs need to be initialized. For various reasons, we decided to enroll
+all the HSMs in the same Security World.</p>
+<p>A Security World (or World for short) is a concept, which allows HSMs to share key material for redundancy purpose. Two
+HSMs enrolled in the same World are essentially identical. You can think of the World as the master encryption key,
+which other keys are then encrypted under.</p>
+<p>Enrolling a HSM in a World involves administrator smart cards. Blank cards are used to create a new World. Enrolling
+a HSM in an existing World requires the corresponding administrator smart cards.</p>
+<h2 id="main-world">Main World</h2>
+<p>Using the tools provided with the HSM, we create the main World. The smart cards which back this world need to
+be stored in a very secure location. They will be needed in the following cases:</p>
+<ul>
+<li>a number of HSMs (or locations) were damaged and the remaining locations no longer form a quorum.</li>
+<li>operators have lost their smart cards (or the passwords thereof) and new smart cards need to be issued.</li>
+</ul>
+<p>A 256-bit AES key (pubKey encryption key) is created at the same time as the main World. This key is used at wallet
+initialization time.</p>
+<p>When enrolling HSMs in the main World, the administrator need to initialize the nvram for rollback protection purpose.</p>
+<p>Typically, administrators will want to create a staging and a dev World. Creating all three Worlds at the same time
+is convenient.</p>
+<h2 id="signing-world">Signing World</h2>
+<p>A different World is used to sign the Core code. This creates a separation of duty: the engineers who sign and release
+the Core code don't have direct access to decrypt wallets.</p>
+<p>Ideally, the public part of the signing keys would be exported from the signing World, into the main World (and staging
+and dev Worlds as well). This is however not possible with our HSMs. We therefore move the signing keys to the other
+worlds. The smart card which backs the signing keys in the non-signing Worlds is then shredded.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../wallet_initialization/" class="btn btn-neutral float-right" title="Wallet initialization">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../supply_chain_security/" class="btn btn-neutral" title="Supply chain security"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>© 2018 Square, Inc.</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../supply_chain_security/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../wallet_initialization/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>
