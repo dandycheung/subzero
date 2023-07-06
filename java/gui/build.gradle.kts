@@ -15,7 +15,7 @@ dependencies {
     implementation(project(":shared"))
     implementation("com.google.zxing:javase:3.5.0")
     implementation("org.yaml:snakeyaml:1.33")
-    implementation("com.google.protobuf:protobuf-java-util:3.21.7")
+    implementation("com.google.protobuf:protobuf-java-util:3.23.3")
     implementation("com.google.protobuf:protobuf-java:3.21.5")
     testImplementation("junit:junit:4.13.2")
     testImplementation("org.assertj:assertj-core:3.23.1")
